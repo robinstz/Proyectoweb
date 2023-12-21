@@ -11,7 +11,8 @@ class CustomUserCreationForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields=['username', 'first_name', 'last_name', 'email', 'password1']
+        fields=['username', 'first_name', 'last_name', 'email','telefono', 'password1']
 
     cui = forms.IntegerField(label='CUI', help_text='Código Único de Identificación CUI')
+    telefono = forms.IntegerField(label='telefono', help_text='numero de celular')
     profile_imagen = forms.ImageField(label='Foto de perfil', required=False)
