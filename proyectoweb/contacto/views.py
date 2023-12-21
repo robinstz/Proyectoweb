@@ -13,9 +13,9 @@ def contactanos(request):
             email=request.POST.get("email")
             contenido=request.POST.get("contenido")
 
-            email=EmailMessage("Mensaje desde App Django",
-            "El usuario con nombre {} con la dirección {} escribe lo siguiente:\n\n {}".format(nombre,email,contenido),
-            "",["usacacademy.genius@gmail.com"],reply_to=[email])
+            email=EmailMessage("Mensaje DE Django",
+            "El usuario {} con la dirección {} comento lo siguiente:\n\n {}".format(nombre,email,contenido),
+            "",["robindanilo3@gmail.com"],reply_to=[email])
 
             try:
                 email.send() 

@@ -127,3 +127,12 @@ button{
 .register p a:hover{
     text-decoration: underline;
 }
+
+.contenedorFormulario{
+
+    background-color: rgba(239, 239, 241, 0.8);
+    
+    width: 75%;
+    
+    margin: 10px auto;
+    }

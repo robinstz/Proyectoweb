@@ -32,6 +32,7 @@
                             <img src="{{ MEDIA_URL }}{{ producto.imagen.url }}" class="img-fluid w-100 rounded" alt="">                                                        
                                 <h4 class="text-secondary">{{ producto.nombre }} </h4>
                                 <p  class="m-0 text-black">{{ producto.precio }}</p>
+                               
                                 <a href="{% url 'carro:agregar' producto.id %}" class="btn btn-success">Agregar Curso</a>                                                                                             
                         </div>
                    
@@ -41,6 +42,24 @@
             </div>
         </div>
     </div>
+
+    <section>
+        <div style="width: 75%; margin: auto; text-align: center; color: black ;">
+
+        categorias:
+
+        {% for producto in productos %}
+
+             {% for categoria in producto.categoriasProd.all %}
+
+                {{categoria.nombre}}
+
+            {% endfor %}                
+        {% endfor %}
+
+        </div>
+
+    </section>
 
 
 {% endblock %}

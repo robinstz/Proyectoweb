@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #My apps
+ 
     'proyectowebapp',
     'cursos',
     'contacto',
@@ -156,3 +156,12 @@ MESSAGE_TAGS={
     mensajes_de_error.WARNING: 'warning',
     mensajes_de_error.ERROR: 'danger',
 }
+
+#configuracion de email
+
+EMAIL_BACKEND= "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST="smtp.gmail.com"
+EMAIL_USE_SSL=True
+EMAIL_PORT=465
+EMAIL_HOST_USER="robindanilo3@gmail.com"
+EMAIL_HOST_PASSWORD="D@nilo500"

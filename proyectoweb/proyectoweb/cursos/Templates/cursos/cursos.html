@@ -31,4 +31,24 @@
     </div>
         
     {% endfor %}
+
+
+    <section>
+        <div style="width: 75%; margin: auto; text-align: center; color: black ;">
+
+        categorias:
+
+        {% for producto in productos %}
+
+             {% for categoriaProd in producto.categoriasProd.all %}
+
+                {{categoriaProd.nombre}}
+
+            {% endfor %}                
+        {% endfor %}
+
+        </div>
+
+    </section>
+
 {% endblock %}

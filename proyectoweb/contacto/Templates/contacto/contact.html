@@ -7,7 +7,7 @@
 <!-- Page Header Start -->
 <div class="container-fluid page-header py-5">
     <div class="container text-center py-5">
-        <h1 class="display-2 text-white mb-4 animated slideInDown">Nuestros contactos</h1>
+        <h1 class="display-2 text-white mb-4 animated slideInDown">Contactos</h1>
     </div>
 </div>
 <!-- Page Header End -->
@@ -17,13 +17,13 @@
 
     {% if "valido" in request.GET %}
 
-        <p>Información enviada correctamente</p>
+        <p style="color: black;">Información enviada correctamente</p>
 
     {% endif %}
 
     <form action="" method="POST" style="text-align: center;">
         {% csrf_token %}
-        <table style="color:black"> {{miFormulario.as_table}} </table>
+       <div class= "contenedorFormulario"> <table style="color:black"> {{miFormulario.as_table}} </table></div>
         <input type="submit" value="Enviar" style="width: 150px;">
     </form>
 </div>
