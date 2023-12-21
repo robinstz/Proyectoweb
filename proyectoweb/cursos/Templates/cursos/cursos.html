@@ -31,7 +31,10 @@
 
                             <img src="{{ MEDIA_URL }}{{ producto.imagen.url }}" class="img-fluid w-100 rounded" alt="">                                                        
                                 <h4 class="text-secondary">{{ producto.nombre }} </h4>
-                                <p  class="m-0 text-black">Q&nbsp;{{ producto.precio }}</p>
+                                <p style="color: black; font-size: 20px;">Q&nbsp;{{ producto.precio }}</p>
+                                <p style="color: black; font-size: 18px;">{{ producto.contenido }}</p>
+
+
                                
                                 <a href="{% url 'carro:agregar' producto.id %}" class="btn btn-success">Agregar Curso</a>                                                                                             
                         </div>
