@@ -14,7 +14,7 @@
         {% else %}
 
             <div class="alert alert-danger text-center">
-                Iniciar Sesión Para Asignar
+                Necesita registrarse para asignarse un curso
             </div>
 
         {% endif %}
@@ -31,7 +31,7 @@
 
                             <img src="{{ MEDIA_URL }}{{ producto.imagen.url }}" class="img-fluid w-100 rounded" alt="">                                                        
                                 <h4 class="text-secondary">{{ producto.nombre }} </h4>
-                                <p  class="m-0 text-black">{{ producto.precio }}</p>
+                                <p  class="m-0 text-black">Q&nbsp;{{ producto.precio }}</p>
                                
                                 <a href="{% url 'carro:agregar' producto.id %}" class="btn btn-success">Agregar Curso</a>                                                                                             
                         </div>

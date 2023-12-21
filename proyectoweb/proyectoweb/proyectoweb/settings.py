@@ -139,11 +139,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 JAZZMIN_SETTINGS = JAZZMIN_SETTINGS
 
 
-#configuracion de email
-
-EMAIL_BACKEND= "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST="smtp.gmail.com"
-EMAIL_USE_SSL=True
-EMAIL_PORT=465
-EMAIL_HOST_USER="robindanilo3@gmail.com"
-EMAIL_HOST_PASSWORD="D@nilo500"
