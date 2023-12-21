@@ -53,11 +53,11 @@
 
         {% for producto in productos %}
 
-             {% for categoria in producto.categoriasProd.all %}
+                {% for categoriaProd in producto.categoriasProd.all %}
 
-                {{categoria.nombre}}
+                    {{categoriaProd.nombre}}
 
-            {% endfor %}                
+                {% endfor %}                
         {% endfor %}
 
         </div>
