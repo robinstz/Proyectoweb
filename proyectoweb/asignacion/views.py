@@ -27,8 +27,8 @@ def procesar_pedido(request):
     enviar_mail(
         pedido=pedido,
         lineas_pedido=lineas_pedido,
-        nombreusuario=request.username,
-        emailusuario=request.usermail
+        nombreusuario=request.user.username,
+        emailusuario=request.user.email
     )
 
     messages.success(request, "Su asignación ha sido completada correctamente")
