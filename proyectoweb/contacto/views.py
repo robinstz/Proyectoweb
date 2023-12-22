@@ -15,7 +15,7 @@ def contactanos(request):
 
             email=EmailMessage("Mensaje DE Django",
             "El usuario {} con la dirección {} comento lo siguiente:\n\n {}".format(nombre,email,contenido),
-            "",["robindanilo3@gmail.com"],reply_to=[email])
+            "",["danilitosatz@gmail.com"],reply_to=[email])
 
             try:
                 email.send() 

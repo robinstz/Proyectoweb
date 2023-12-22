@@ -28,7 +28,7 @@ def procesar_pedido(request):
         pedido=pedido,
         lineas_pedido=lineas_pedido,
         nombreusuario=request.username,
-        emailusuario=request.user.mail
+        emailusuario=request.usermail
     )
 
     messages.success(request, "Su asignación ha sido completada correctamente")
@@ -44,7 +44,7 @@ def enviar_mail(**kwargs):
     })
 
     mensaje_texto=strip_tags(mensaje)
-    from_email="robindanilo3@gmail.com"
+    from_email="danilitosatz@gmail.com"
     to=kwargs.get("emailusuario")
 
     send_mail(asunto, mensaje_texto, from_email,[to], html_message=mensaje)
