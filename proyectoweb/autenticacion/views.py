@@ -6,6 +6,7 @@ from .forms import CustomUserCreationForm
 from django.contrib import messages
 from django.urls import reverse
 
+
 class VRegistro(View):
 
     def get(self, request):
@@ -26,6 +27,8 @@ class VRegistro(View):
             for msg in form.error_messages:
                 messages.error(request, form.error_messages[msg])
             return render(request, "registro/registro.html", {"form": form})
+
+
 
 
 def cerrar_sesion(request):
@@ -49,6 +52,8 @@ def logear(request):
     form= AuthenticationForm()
     return render(request, "login/login.html", {"form":form})
 
+
+
 def logearC(request):
     if request.method=="POST":
         form= AuthenticationForm(request, data =request.POST)
@@ -56,7 +61,7 @@ def logearC(request):
             nombre_usuario= form.cleaned_data.get("username")
             contra= form.cleaned_data.get("password")
             usuario=authenticate(username= nombre_usuario, password=contra)
-            if usuario is not None: 
+            if usuario is not None:
                 login(request,usuario)
                 admin_url=reverse('admin:index')
                 return redirect(admin_url)
@@ -66,6 +71,8 @@ def logearC(request):
            messages.error(request, "Informacion incorrecta")
     form= AuthenticationForm()
     return render(request, "loginC/loginC.html", {"form":form})
+
+
 
 def logearA(request):
     if request.method=="POST":
