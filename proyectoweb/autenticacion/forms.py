@@ -11,6 +11,7 @@ class CustomUserCreationForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields=['username', 'first_name', 'last_name', 'email', 'password1']
+        fields=['username', 'first_name', 'last_name', 'email','password1']
     cui = forms.IntegerField(label='CUI', help_text='Código Único de Identificación CUI')
    
+
