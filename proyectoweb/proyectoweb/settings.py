@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-tobai!dbttz+$(x3e7+0tn=q%kgxxwr9j#&ztn%4+3*)!ii&7+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
