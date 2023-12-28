@@ -13,11 +13,11 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 from .juzzmin import JAZZMIN_SETTINGS
+from django.contrib.messages import constants as mensajes_de_error
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-#hola #
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -28,12 +28,13 @@ SECRET_KEY = 'django-insecure-tobai!dbttz+$(x3e7+0tn=q%kgxxwr9j#&ztn%4+3*)!ii&7+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+  
     'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,9 +43,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #My apps
+ 
     'proyectowebapp',
     'cursos',
+    'contacto',
+    'carro',
+    'autenticacion',
+    'crispy_forms',
+    'crispy_bootstrap5',
+   'asignacion',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +77,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'carro.context_processor.importe_total_carro',
             ],
         },
     },
@@ -86,11 +94,12 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME':'proyectoweb',
         'USER':'postgres',
-        'PASSWORD': '1234',
-        'HOST': '127.0.0.1',
+        'PASSWORD': 'postgres',
+        'HOST': 'database-1.c7aaag20ywb2.us-east-2.rds.amazonaws.com',
         'DATABASE_PORT':'5432',
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -138,4 +147,22 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 JAZZMIN_SETTINGS = JAZZMIN_SETTINGS
 
+CRIPSY_ALLOWED_TEMPLATE_PACKS="bootstrap5"
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
+MESSAGE_TAGS={
+    mensajes_de_error.DEBUG: 'debug',
+    mensajes_de_error.INFO: 'info',
+    mensajes_de_error.SUCCESS: 'success',
+    mensajes_de_error.WARNING: 'warning',
+    mensajes_de_error.ERROR: 'danger',
+}
+
+#configuracion de email
+
+EMAIL_BACKEND= "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST="smtp.gmail.com"
+EMAIL_USE_TLS=True
+EMAIL_PORT=587
+EMAIL_HOST_USER="danilitosatz@gmail.com"
+EMAIL_HOST_PASSWORD="eijueokyfswkaqf"
