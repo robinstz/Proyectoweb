@@ -7,3 +7,5 @@ def inicio(request):
 
 def about(request):
     return render(request, 'proyectowebapp/about.html')
+
+
