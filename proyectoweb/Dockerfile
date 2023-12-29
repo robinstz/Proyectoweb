@@ -1,8 +1,8 @@
 # Start your image with a node base image
-FROM python:3.10.4-alpine3.15
-# The /app directory should act as the main application directory
-ENV PYTHONUNBUFFERED = 1
+FROM python:3.12-alpine3.19
 
+ENV PYTHONUNBUFFERED=1
+# The /app directory should act as the main application directory
 WORKDIR /app
 
 RUN apk update \
